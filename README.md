@@ -8,13 +8,13 @@ Easy and awesome authentication for NextJS applications using Auth0.
 
 ## Features
 
-* Written in Typescript
-* Uses Auth0
-* Simple setup
-* Simple API
-* Hooks
-* SSR support
-* Works well with custom APIs
+- Written in Typescript
+- Uses Auth0
+- Simple setup
+- Simple API
+- Hooks
+- SSR support
+- Works well with custom APIs
 
 ## Contributing
 
