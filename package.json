@@ -1,0 +1,9 @@
+{
+  "name": "nauth0",
+  "version": "0.1.0",
+  "description": "Easy and awesome authentication for NextJS applications using Auth0",
+  "main": "index.js",
+  "repository": "git@github.com:jamiedavenport/nauth0.git",
+  "author": "Jamie Davenport <1329874+jamiedavenport@users.noreply.github.com>",
+  "private": true
+}
