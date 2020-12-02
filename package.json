@@ -6,5 +6,6 @@
   "repository": "git@github.com:jamiedavenport/nauth0.git",
   "author": "Jamie Davenport <1329874+jamiedavenport@users.noreply.github.com>",
   "private": true,
-  "license": "MIT"
+  "license": "MIT",
+  "workspaces": ["packages/*"]
 }
