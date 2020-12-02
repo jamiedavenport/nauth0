@@ -1,5 +1,13 @@
 {
   "name": "nauth0",
   "version": "0.1.0",
-  "license": "MIT"
+  "license": "MIT",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  }
 }

@@ -8,11 +8,13 @@
   "private": true,
   "license": "MIT",
   "scripts": {
+    "build": "lerna run build",
     "lint": "eslint --ext .ts,.tsx,.js --max-warnings 0 --ignore-path .gitignore --cache",
     "lint:all": "yarn run lint .",
     "format": "prettier --write --ignore-path .gitignore",
     "format:all": "yarn run format .",
-    "test": "jest"
+    "test": "jest",
+    "publish-canary": "lerna publish --canary"
   },
   "workspaces": [
     "packages/*"
