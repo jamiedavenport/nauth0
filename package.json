@@ -14,7 +14,8 @@
     "format": "prettier --write --ignore-path .gitignore",
     "format:all": "yarn run format .",
     "test": "jest",
-    "publish-canary": "lerna publish --canary"
+    "version:canary": "yarn lerna version 2.0.0-alpha.`git rev-parse --short HEAD` --exact --no-push --yes",
+    "publish:canary": "lerna publish from-package --dist-tag canary --yes --no-verify-access"
   },
   "workspaces": [
     "packages/*"
