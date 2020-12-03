@@ -14,7 +14,7 @@
     "format": "prettier --write --ignore-path .gitignore",
     "format:all": "yarn run format .",
     "test": "jest",
-    "version": "lerna version --create-release github --conventional-commits",
+    "version": "lerna version --create-release github --conventional-commits --preid canary",
     "publish:canary": "lerna publish from-package --dist-tag canary --yes --no-verify-access"
   },
   "workspaces": [
