@@ -1,6 +1,12 @@
 {
   "name": "nauth0",
   "version": "0.2.0-canary.0",
+  "description": "Easy and awesome authentication for NextJS applications using Auth0",
+  "author": {
+    "name": "Jamie Davenport",
+    "email": "1329874+jamiedavenport@users.noreply.github.com",
+    "url": "https://jamiedavenport.dev"
+  },
   "license": "MIT",
   "main": "dist/index.js",
   "files": [
