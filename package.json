@@ -16,8 +16,7 @@
     "test": "jest",
     "prepare:canary": "yarn build",
     "version:canary": "lerna version --create-release github --conventional-commits --preid canary",
-    "publish:canary": "lerna publish from-package --dist-tag canary --yes --no-verify-access",
-    "release:canary": "yarn prepare:canary && yarn version:canary && yarn publish:canary"
+    "publish:canary": "lerna publish from-package --dist-tag canary --yes --no-verify-access"
   },
   "workspaces": [
     "packages/*"
