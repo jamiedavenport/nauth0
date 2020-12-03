@@ -8,6 +8,7 @@
   "private": true,
   "license": "MIT",
   "scripts": {
+    "dev": "lerna run --parallel dev",
     "build": "lerna run build",
     "lint": "eslint --ext .ts,.tsx,.js --max-warnings 0 --ignore-path .gitignore --cache",
     "lint:all": "yarn run lint .",

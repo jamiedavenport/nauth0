@@ -10,6 +10,7 @@
   "dependencies": {
     "next": "10.0.3",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "nauth0": "0.2.0-canary.0"
   }
 }
