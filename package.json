@@ -19,10 +19,12 @@
     "publish:canary": "lerna publish from-package --dist-tag canary --yes --no-verify-access"
   },
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "example"
   ],
   "devDependencies": {
     "@types/jest": "^26.0.16",
+    "@types/react": "^17.0.0",
     "@typescript-eslint/eslint-plugin": "^4.9.0",
     "@typescript-eslint/parser": "^4.9.0",
     "eslint": "^7.14.0",
