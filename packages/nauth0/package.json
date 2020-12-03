@@ -10,5 +10,16 @@
   "scripts": {
     "build": "tsc"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jamiedavenport/nauth0"
+  },
+  "keywords": [
+    "authentication",
+    "auth0",
+    "next",
+    "next.js",
+    "node"
+  ],
   "gitHead": "d08005ffaa580e4be916cd67bf09548d5ec58427"
 }
