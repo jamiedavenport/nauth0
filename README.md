@@ -6,6 +6,20 @@ Easy and awesome authentication for NextJS applications using Auth0.
 
 ## Quick Start
 
+Install the dependencies:
+
+```
+yarn add nauth0
+```
+
+Add `/pages/api/auth/[...auth].ts` to your NextJS application.
+
+```ts
+import { nauth0 } from 'nauth0';
+
+export default nauth0({});
+```
+
 ## Features
 
 - Written in Typescript

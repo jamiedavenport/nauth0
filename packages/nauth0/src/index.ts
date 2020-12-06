@@ -1,2 +1,1 @@
-export const one = 1;
-export const two = 2;
+export { apiHandler as nauth0 } from './server';
