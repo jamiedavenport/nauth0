@@ -44,6 +44,14 @@ Server-side & Client-side!
 
 ## Rest API
 
+### `/api/auth/login`
+
+### `/api/auth/logout`
+
+### `/api/auth/callback`
+
+### `/api/auth/session`
+
 ## Contributing
 
 ### Contributors
