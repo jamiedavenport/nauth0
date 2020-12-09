@@ -40,18 +40,6 @@ Client-side only!
 
 Server-side & Client-side!
 
-### `getCsrfToken`
-
-Server-side & Client-side!
-
-### `signIn`
-
-Client-side only!
-
-### `signOut`
-
-Client-side only!
-
 ### `SessionProvider`
 
 ## Rest API
