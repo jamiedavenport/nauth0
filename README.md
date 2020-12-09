@@ -58,13 +58,13 @@ Server-side & Client-side!
 
 ## Rest API
 
-### `/api/auth/login`
+### `/api/auth/login`
 
-### `/api/auth/logout`
+### `/api/auth/logout`
 
-### `/api/auth/callback`
+### `/api/auth/callback`
 
-### `/api/auth/session`
+### `/api/auth/session`
 
 ## Contributing
 
