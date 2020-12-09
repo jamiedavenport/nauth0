@@ -15,13 +15,11 @@
     "strictPropertyInitialization": true,
     "noImplicitThis": true,
     "alwaysStrict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedIndexedAccess": true,
     "baseUrl": "./",
-    "skipLibCheck": true /* Skip type checking of declaration files. */
+    "skipLibCheck": true,
+    "jsx": "preserve"
   },
   "include": ["src"],
   "exclude": ["**/*.test.ts", "node_modules"]

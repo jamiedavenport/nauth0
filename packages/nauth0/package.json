@@ -28,5 +28,10 @@
     "next.js",
     "node"
   ],
-  "gitHead": "d08005ffaa580e4be916cd67bf09548d5ec58427"
+  "gitHead": "d08005ffaa580e4be916cd67bf09548d5ec58427",
+  "peerDependencies": {
+    "next": "^9.0.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  }
 }

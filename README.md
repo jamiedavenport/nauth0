@@ -6,6 +6,25 @@ Easy and awesome authentication for NextJS applications using Auth0.
 
 ## Quick Start
 
+Install the dependencies:
+
+```
+yarn add nauth0
+```
+
+Add `/pages/api/auth/[auth].ts` to your NextJS application.
+
+```ts
+import nauth0 from 'nauth0';
+
+export default nauth0({
+  domain: 'Auth0 Domain',
+  clientId: 'Auth0 Client ID',
+  clientSecret: 'Auth0 Client Secret',
+  scope: 'openid profile',
+});
+```
+
 ## Features
 
 - Written in Typescript
@@ -15,6 +34,28 @@ Easy and awesome authentication for NextJS applications using Auth0.
 - Hooks
 - SSR support
 - Works well with custom APIs
+
+## Client API
+
+### `useSession`
+
+Client-side only!
+
+### `getSession`
+
+Server-side & Client-side!
+
+### `SessionProvider`
+
+## Rest API
+
+### `/api/auth/login`
+
+### `/api/auth/logout`
+
+### `/api/auth/callback`
+
+### `/api/auth/session`
 
 ## Contributing
 
