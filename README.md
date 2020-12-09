@@ -21,7 +21,7 @@ export default nauth0({
   domain: 'Auth0 Domain',
   clientId: 'Auth0 Client ID',
   clientSecret: 'Auth0 Client Secret',
-  scope: 'openid profile'
+  scope: 'openid profile',
 });
 ```
 

@@ -4,5 +4,5 @@ export default nauth0({
   domain: '',
   clientId: '',
   clientSecret: '',
-  scope: 'openid profile'
+  scope: 'openid profile',
 });

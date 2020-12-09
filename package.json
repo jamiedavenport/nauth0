@@ -47,6 +47,6 @@
   },
   "lint-staged": {
     "*.{ts,tsx,js}": "yarn run lint",
-    "*.{ts,tsx,js,json}": "yarn run format"
+    "*.{ts,tsx,js,json}": "yarn run format --write"
   }
 }
