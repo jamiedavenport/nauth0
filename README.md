@@ -12,7 +12,7 @@ Install the dependencies:
 yarn add nauth0
 ```
 
-Add `/pages/api/auth/[...auth].ts` to your NextJS application.
+Add `/pages/api/auth/[auth].ts` to your NextJS application.
 
 ```ts
 import { nauth0 } from 'nauth0';

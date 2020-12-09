@@ -14,7 +14,7 @@ type NAuth0Api = (cfg: NAuth0Config) => NextApiHandler;
 // TODO: Fixup types to be more strict e.g. 'callback | login'
 // TODO: Edge case: What about when auth is array? Can it be an array? If not change the route from [...auth].ts to [auth].ts?
 const getActionFromRequest = (req: NextApiRequest): string => {
-  return req.query.auth[0];
+  return req.query.auth as string;
 };
 
 const getApiRoute = (action: string): NAuth0ApiRoute => {
