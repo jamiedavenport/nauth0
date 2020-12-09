@@ -15,9 +15,14 @@ yarn add nauth0
 Add `/pages/api/auth/[auth].ts` to your NextJS application.
 
 ```ts
-import { nauth0 } from 'nauth0';
+import nauth0 from 'nauth0';
 
-export default nauth0({});
+export default nauth0({
+  domain: 'Auth0 Domain',
+  clientId: 'Auth0 Client ID',
+  clientSecret: 'Auth0 Client Secret',
+  scope: 'openid profile'
+});
 ```
 
 ## Features

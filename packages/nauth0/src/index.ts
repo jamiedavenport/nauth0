@@ -1,3 +1,3 @@
-export { apiHandler as nauth0 } from './server';
+export { apiHandler as default } from './server';
 export * from './lib';
 export * from './client';
