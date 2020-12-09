@@ -33,5 +33,9 @@
     "next": "^9.0.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0"
+  },
+  "dependencies": {
+    "base64url": "^3.0.1",
+    "openid-client": "^4.2.2"
   }
 }
