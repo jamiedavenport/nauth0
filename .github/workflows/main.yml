@@ -10,6 +10,7 @@ on:
 
 jobs:
   lint:
+    # TODO: Split these into seperate jobs that can run in parallel
     name: CI
     runs-on: ubuntu-latest
     steps:
