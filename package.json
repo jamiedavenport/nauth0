@@ -15,7 +15,7 @@
     "format": "prettier --ignore-path .gitignore",
     "format:all": "yarn run format --write .",
     "format:check": "yarn run format --check .",
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "prepare:canary": "yarn build",
     "version:canary": "lerna version --create-release github --conventional-commits --preid canary",
     "publish:canary": "lerna publish from-package --dist-tag canary --yes --no-verify-access"
