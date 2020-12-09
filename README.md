@@ -29,7 +29,8 @@ The Auth0 Domain, Client ID and Client Secret can be found by creating the appli
 
 ## Auth0 Configuration
 
-Create a new Regular Web Application with the following settings: 
+Create a new Regular Web Application with the following settings:
+
 - Allowed Callback URLs: `http://localhost:3000/api/auth/callback`
 - Allowed Logout URLs: `http://localhost:3000/`
 
