@@ -1,6 +1,5 @@
 import React from 'react';
-import { one } from 'nauth0';
 
-const Home: React.FC = () => <div>{one}</div>;
+const Home: React.FC = () => <div>Hello, World</div>;
 
 export default Home;
