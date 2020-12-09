@@ -3,5 +3,6 @@ export interface NAuth0Config {
   clientId: string;
   clientSecret: string;
   scope: string;
+  redirectUri: string;
   audience?: string;
 }

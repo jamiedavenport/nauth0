@@ -4,7 +4,7 @@ Easy and awesome authentication for NextJS applications using Auth0.
 
 **This project is a WIP and is likely to include breaking changes**
 
-## Quick Start
+## Installation
 
 Install the dependencies:
 
@@ -24,6 +24,15 @@ export default nauth0({
   scope: 'openid profile',
 });
 ```
+
+The Auth0 Domain, Client ID and Client Secret can be found by creating the application within the Auth0 dashboard.
+
+## Auth0 Configuration
+
+Create a new Regular Web Application with the following settings:
+
+- Allowed Callback URLs: `http://localhost:3000/api/auth/callback`
+- Allowed Logout URLs: `http://localhost:3000/`
 
 ## Features
 
@@ -49,13 +58,13 @@ Server-side & Client-side!
 
 ## Rest API
 
-### `/api/auth/login`
+### `/api/auth/login`
 
-### `/api/auth/logout`
+### `/api/auth/logout`
 
-### `/api/auth/callback`
+### `/api/auth/callback`
 
-### `/api/auth/session`
+### `/api/auth/session`
 
 ## Contributing
 
