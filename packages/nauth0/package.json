@@ -30,6 +30,8 @@
   ],
   "gitHead": "d08005ffaa580e4be916cd67bf09548d5ec58427",
   "peerDependencies": {
-    "next": "^10.0.3"
+    "next": "^10.0.3",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
   }
 }

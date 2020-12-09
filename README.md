@@ -30,6 +30,32 @@ export default nauth0({});
 - SSR support
 - Works well with custom APIs
 
+## Client API
+
+### `useSession`
+
+Client-side only!
+
+### `getSession`
+
+Server-side & Client-side!
+
+### `getCsrfToken`
+
+Server-side & Client-side!
+
+### `signIn`
+
+Client-side only!
+
+### `signOut`
+
+Client-side only!
+
+### `SessionProvider`
+
+## Rest API
+
 ## Contributing
 
 ### Contributors

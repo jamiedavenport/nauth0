@@ -18,7 +18,8 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "baseUrl": "./",
-    "skipLibCheck": true /* Skip type checking of declaration files. */
+    "skipLibCheck": true,
+    "jsx": "preserve"
   },
   "include": ["src"],
   "exclude": ["**/*.test.ts", "node_modules"]
