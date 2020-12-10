@@ -36,7 +36,11 @@
   },
   "dependencies": {
     "base64url": "^3.0.1",
+    "jsonwebtoken": "^8.5.1",
     "nookies": "^2.5.0",
     "openid-client": "^4.2.2"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "^8.5.0"
   }
 }

@@ -5,4 +5,9 @@ export interface NAuth0Config {
   scope: string;
   redirectUri: string;
   audience?: string;
+
+  session: {
+    cookieSecret: string;
+    cookieLifetime?: number;
+  };
 }

@@ -6,4 +6,7 @@ export default nauth0({
   clientSecret: process.env.AUTH0_CLIENT_SECRET,
   redirectUri: 'http://localhost:3000/api/auth/callback',
   scope: 'openid profile',
+  session: {
+    cookieSecret: 'superdupersecret',
+  },
 });
