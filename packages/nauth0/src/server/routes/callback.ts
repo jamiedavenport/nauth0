@@ -8,7 +8,9 @@ export const callbackRoute: NAuth0ApiRoute = async (req, res, opts) => {
   const cookies = parseCookies({ req });
   const state = cookies[stateCookie];
 
-  // TODO: Check if state exists
+  if (typeof state === undefined) {
+    throw new Error('Missing state cookie');
+  }
 
   const client = await createClient(opts);
   const params = client.callbackParams(req);
