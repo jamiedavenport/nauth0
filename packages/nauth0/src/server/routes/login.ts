@@ -1,17 +1,10 @@
 import { NAuth0ApiRoute } from './route';
-import { Issuer } from 'openid-client';
-import { createState } from '../oidc';
+import { createClient, createState } from '../oidc';
 import { setCookie } from 'nookies';
+import { stateCookie } from '../cookies';
 
 export const loginRoute: NAuth0ApiRoute = async (req, res, opts) => {
-  const issuer = await Issuer.discover(`https://${opts.domain}/`);
-  const client = new issuer.Client({
-    client_id: opts.clientId,
-    client_secret: opts.clientSecret,
-    redirect_uris: [opts.redirectUri],
-    response_types: ['code'],
-  });
-
+  const client = await createClient(opts);
   const state = createState();
 
   const authorizationUrl = client.authorizationUrl({
@@ -22,7 +15,7 @@ export const loginRoute: NAuth0ApiRoute = async (req, res, opts) => {
     state,
   });
 
-  setCookie({ res }, 'nauth0:state', state, {
+  setCookie({ res }, stateCookie, state, {
     maxAge: 60 * 60,
     httpOnly: true,
   });
