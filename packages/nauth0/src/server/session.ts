@@ -29,5 +29,9 @@ export const isValidToken = (
     return false;
   }
 
+  if ((decodedToken as Token).session === undefined) {
+    return false;
+  }
+
   return true;
 };
