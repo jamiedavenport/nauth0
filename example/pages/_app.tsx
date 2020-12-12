@@ -1,6 +1,6 @@
 import React from 'react';
 import type { AppProps } from 'next/app';
-import { SessionProvider } from 'nauth0/dist/client';
+import { SessionProvider } from 'nauth0';
 
 function App({ Component, pageProps }: AppProps): JSX.Element {
   return (

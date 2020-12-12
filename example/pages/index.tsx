@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSession } from 'nauth0/dist/client';
+import { useSession } from 'nauth0';
 
 const Home: React.FC = () => {
   const [session, isLoading] = useSession();

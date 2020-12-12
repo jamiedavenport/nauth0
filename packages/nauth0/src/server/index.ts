@@ -1,4 +1,4 @@
-import { NextApiHandler, NextApiRequest } from 'next';
+import type { NextApiHandler, NextApiRequest } from 'next';
 import { NAuth0Config } from './config';
 import {
   callbackRoute,
