@@ -14,7 +14,11 @@ const Home: React.FC = () => {
     return <a href="/api/auth/login">Login</a>;
   }
 
-  return <div>Hello, {user.id}</div>;
+  return (
+    <code>
+      <pre>{JSON.stringify(user)}</pre>
+    </code>
+  );
 };
 
 export default Home;
