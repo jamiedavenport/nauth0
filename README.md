@@ -9,13 +9,13 @@ Easy and awesome authentication for NextJS applications using Auth0.
 Install the dependencies:
 
 ```
-yarn add nauth0
+yarn add nauth0 @nauth0/server
 ```
 
 Add `/pages/api/auth/[auth].ts` to your NextJS application.
 
 ```ts
-import nauth0 from 'nauth0';
+import nauth0 from '@nauth0/server';
 
 export default nauth0({
   domain: 'Auth0 Domain',
