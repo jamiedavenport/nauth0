@@ -21,6 +21,6 @@
     "skipLibCheck": true,
     "jsx": "preserve"
   },
-  "include": ["src", "../@nauth0/server/src/routes"],
-  "exclude": ["**/*.test.ts", "node_modules"]
+  "include": ["src"],
+  "exclude": ["**/*.test.*", "node_modules"]
 }
