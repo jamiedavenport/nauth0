@@ -35,7 +35,7 @@ describe('useSession', () => {
 
   afterAll(() => server.close());
 
-  it('should use the SessionContext when available', () => {
+  it('works when SessionProvider is available', () => {
     render(
       <SessionProvider
         value={{
@@ -51,9 +51,7 @@ describe('useSession', () => {
     expect(screen.getByText(id)).toBeInTheDocument();
   });
 
-  it('should call /api/auth/session when SessionContext is unavailable', async () => {
-    const id = 'user-id';
-
+  it('works when SessionContext is unavailable', async () => {
     render(<App />);
 
     expect(screen.getByText('Loading...')).toBeInTheDocument();
