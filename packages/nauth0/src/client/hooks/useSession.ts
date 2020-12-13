@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import { Session } from 'src/lib';
 import { SessionContext } from '../components/SessionProvider';
+import fetch from 'unfetch';
 
 export const useSession = (): [Session, boolean] => {
   const ssrSession = useContext(SessionContext);

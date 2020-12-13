@@ -15,7 +15,8 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "dev": "tsc --watch",
-    "build": "tsc"
+    "build": "tsc",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -38,6 +39,7 @@
     "base64url": "^3.0.1",
     "jsonwebtoken": "^8.5.1",
     "nookies": "^2.5.0",
-    "openid-client": "^4.2.2"
+    "openid-client": "^4.2.2",
+    "unfetch": "^4.2.0"
   }
 }
