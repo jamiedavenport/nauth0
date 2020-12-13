@@ -22,3 +22,12 @@ yarn dev
 # Test
 yarn test --watch
 ```
+
+### Example Application
+
+An example application will be launched at http://localhost:3000. This is already configured with an Auth0 application and you can use it to test your changes. Use the email/password combination below:
+
+```
+tester@nauth0.dev
+password
+```
