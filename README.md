@@ -9,13 +9,13 @@ Easy and awesome authentication for NextJS applications using Auth0.
 Install the dependencies:
 
 ```
-yarn add nauth0
+yarn add nauth0 @nauth0/server
 ```
 
 Add `/pages/api/auth/[auth].ts` to your NextJS application.
 
 ```ts
-import nauth0 from 'nauth0';
+import nauth0 from '@nauth0/server';
 
 export default nauth0({
   domain: 'Auth0 Domain',
@@ -48,13 +48,53 @@ Create a new Regular Web Application with the following settings:
 
 ### `useSession`
 
-Client-side only!
+```tsx
+import { useSession } from 'nauth0';
+
+const Home: React.FC = () => {
+  const [session, isLoading] = useSession();
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  const { user } = session;
+
+  if (!user) {
+    return <a href="/api/auth/login">Login</a>;
+  }
+
+  return (
+    <code>
+      <pre>{JSON.stringify(user)}</pre>
+    </code>
+  );
+};
+```
 
 ### `getSession`
 
 Server-side & Client-side!
 
 ### `SessionProvider`
+
+`SessionProvider` allows the user session to be shared across the application and injected on the server-side to avoid loading screens. Highly recommended!
+
+```tsx
+import React from 'react';
+import type { AppProps } from 'next/app';
+import { SessionProvider } from 'nauth0';
+
+function App({ Component, pageProps }: AppProps): JSX.Element {
+  return (
+    <SessionProvider value={pageProps.session}>
+      <Component {...pageProps} />
+    </SessionProvider>
+  );
+}
+
+export default App;
+```
 
 ## Rest API
 

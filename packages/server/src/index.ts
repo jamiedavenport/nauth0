@@ -1,4 +1,4 @@
-import { NextApiHandler, NextApiRequest } from 'next';
+import type { NextApiHandler, NextApiRequest } from 'next';
 import { NAuth0Config } from './config';
 import {
   callbackRoute,
@@ -32,7 +32,7 @@ const getApiRoute = (action: string): NAuth0ApiRoute => {
   }
 };
 
-export const apiHandler: NAuth0Api = (cfg) => async (req, res) => {
+const apiHandler: NAuth0Api = (cfg) => async (req, res) => {
   const action = getActionFromRequest(req);
 
   const route = getApiRoute(action);
@@ -40,3 +40,4 @@ export const apiHandler: NAuth0Api = (cfg) => async (req, res) => {
 };
 
 export * from './config';
+export default apiHandler;

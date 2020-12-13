@@ -1,4 +1,4 @@
-import nauth0 from 'nauth0';
+import nauth0 from '@nauth0/server';
 
 export default nauth0({
   domain: process.env.AUTH0_DOMAIN,

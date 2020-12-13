@@ -1,5 +1,5 @@
 import { TokenSet } from 'openid-client';
-import { Session } from 'src/lib';
+import { Session } from 'nauth0';
 import { sign } from 'jsonwebtoken';
 import { NAuth0Config } from './config';
 
