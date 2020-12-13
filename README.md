@@ -48,7 +48,7 @@ Create a new Regular Web Application with the following settings:
 
 ### `useSession`
 
-```ts
+```tsx
 import { useSession } from 'nauth0';
 
 const Home: React.FC = () => {
@@ -80,7 +80,7 @@ Server-side & Client-side!
 
 `SessionProvider` allows the user session to be shared across the application and injected on the server-side to avoid loading screens. Highly recommended!
 
-```ts
+```tsx
 import React from 'react';
 import type { AppProps } from 'next/app';
 import { SessionProvider } from 'nauth0';
