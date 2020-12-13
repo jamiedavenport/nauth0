@@ -30,10 +30,10 @@
   ],
   "gitHead": "d08005ffaa580e4be916cd67bf09548d5ec58427",
   "peerDependencies": {
-    "next": "^9.0.0",
-    "nauth0": "0.2.0-canary.0"
+    "next": "^9.0.0"
   },
   "dependencies": {
+    "nauth0": "0.2.0-canary.0",
     "base64url": "^3.0.1",
     "jsonwebtoken": "^8.5.1",
     "nookies": "^2.5.0",
