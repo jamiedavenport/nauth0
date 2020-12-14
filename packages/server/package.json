@@ -29,7 +29,7 @@
     "next.js",
     "node"
   ],
-  "gitHead": "0dca693b246abeaf7eef628157b84f960bf408c8",
+  "gitHead": "0d123d4251347a4ba9a9e78ac6c78d825089a4ea",
   "peerDependencies": {
     "next": "^9.0.0"
   },
