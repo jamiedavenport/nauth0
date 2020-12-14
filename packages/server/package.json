@@ -1,6 +1,6 @@
 {
   "name": "@nauth0/server",
-  "version": "0.3.0-canary.0",
+  "version": "0.3.1-canary.0",
   "description": "Easy and awesome authentication for NextJS applications using Auth0",
   "author": {
     "name": "Jamie Davenport",
@@ -36,7 +36,7 @@
   "dependencies": {
     "base64url": "^3.0.1",
     "jsonwebtoken": "^8.5.1",
-    "nauth0": "^0.3.0-canary.0",
+    "nauth0": "^0.3.1-canary.0",
     "nookies": "^2.5.0",
     "openid-client": "^4.2.2"
   }
