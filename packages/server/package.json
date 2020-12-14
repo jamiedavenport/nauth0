@@ -29,7 +29,7 @@
     "next.js",
     "node"
   ],
-  "gitHead": "2f57ed3540b03bb8eb56e4d80c84ec82c98e3396",
+  "gitHead": "0dca693b246abeaf7eef628157b84f960bf408c8",
   "peerDependencies": {
     "next": "^9.0.0"
   },
@@ -39,5 +39,8 @@
     "nauth0": "^0.3.1-canary.0",
     "nookies": "^2.5.0",
     "openid-client": "^4.2.2"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
