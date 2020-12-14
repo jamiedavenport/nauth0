@@ -1,7 +1,7 @@
 import { TokenSet } from 'openid-client';
-import { Session } from 'nauth0';
 import { sign } from 'jsonwebtoken';
-import { NAuth0Config } from './config';
+import { NAuth0Options } from './config';
+import { Session } from './lib';
 
 export interface Token {
   session: Session;
@@ -17,7 +17,10 @@ export const sessionFromTokenSet = (tokenSet: TokenSet): Session => {
   };
 };
 
-export const encodeSession = (session: Session, opts: NAuth0Config): string => {
+export const encodeSession = (
+  session: Session,
+  opts: NAuth0Options
+): string => {
   return sign({ session }, opts.session.cookieSecret);
 };
 

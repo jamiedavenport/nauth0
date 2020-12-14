@@ -1,6 +1,6 @@
-import nauth0 from 'lib/nauth0';
+import nauth0 from 'nauth0';
 
-export default nauth0.handler({
+export default nauth0({
   domain: process.env.AUTH0_DOMAIN,
   clientId: process.env.AUTH0_CLIENT_ID,
   clientSecret: process.env.AUTH0_CLIENT_SECRET,

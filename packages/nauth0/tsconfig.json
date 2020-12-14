@@ -19,8 +19,9 @@
     "noFallthroughCasesInSwitch": true,
     "baseUrl": "./",
     "skipLibCheck": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "types": []
   },
   "include": ["src"],
-  "exclude": ["**/*.test.*", "node_modules"]
+  "exclude": ["**/*.test.*", "node_modules", "dist"]
 }

@@ -1,8 +1,8 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { NAuth0Config } from '../config';
+import { NAuth0Options } from '../config';
 
 export type NAuth0ApiRoute = (
   req: NextApiRequest,
   res: NextApiResponse,
-  cfg: NAuth0Config
+  cfg: NAuth0Options
 ) => void | Promise<void>;

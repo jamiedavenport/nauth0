@@ -8,7 +8,6 @@
     "start": "next start"
   },
   "dependencies": {
-    "@nauth0/server": "^0.3.3-canary.0",
     "nauth0": "^0.3.3-canary.0",
     "next": "10.0.3",
     "react": "17.0.1",
