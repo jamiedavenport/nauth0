@@ -13,6 +13,9 @@
   "files": [
     "dist"
   ],
+  "engines": {
+    "node": ">=12.19.0"
+  },
   "types": "dist/index.d.ts",
   "scripts": {
     "dev": "tsc --watch",
