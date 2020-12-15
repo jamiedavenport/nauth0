@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0-canary.0](https://github.com/jamiedavenport/nauth0/compare/v0.3.3-canary.0...v0.4.0-canary.0) (2020-12-15)
+
+### Features
+
+- getSession method on server ([#29](https://github.com/jamiedavenport/nauth0/issues/29)) ([240a9f0](https://github.com/jamiedavenport/nauth0/commit/240a9f04c0616379e7357c4a49ca2a4041e1e059))
+
 ## [0.3.3-canary.0](https://github.com/jamiedavenport/nauth0/compare/v0.3.2-canary.0...v0.3.3-canary.0) (2020-12-14)
 
 **Note:** Version bump only for package nauth0
