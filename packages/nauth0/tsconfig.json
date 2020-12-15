@@ -17,7 +17,7 @@
     "alwaysStrict": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "baseUrl": "./",
+    "baseUrl": "src",
     "skipLibCheck": true,
     "jsx": "preserve",
     "types": []

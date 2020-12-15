@@ -1,6 +1,6 @@
+import { Session } from 'lib';
+import { NAuth0Client } from 'client';
 import { NextApiHandler } from 'next';
-import { NAuth0Client } from './client';
-import { Session } from './lib';
 
 class BrowserNAuth0Client implements NAuth0Client {
   handler(): NextApiHandler {
@@ -13,3 +13,5 @@ class BrowserNAuth0Client implements NAuth0Client {
 }
 
 export default BrowserNAuth0Client;
+export * from './SessionProvider';
+export * from './useSession';

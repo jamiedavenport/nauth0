@@ -1,7 +1,7 @@
 import { TokenSet } from 'openid-client';
-import { sign } from 'jsonwebtoken';
 import { NAuth0Options } from './config';
-import { Session } from './lib';
+import { Session } from '../lib';
+import SignJWT from 'jose/jwt/sign';
 
 export interface Token {
   session: Session;
@@ -17,11 +17,13 @@ export const sessionFromTokenSet = (tokenSet: TokenSet): Session => {
   };
 };
 
-export const encodeSession = (
+export const encodeSession = async (
   session: Session,
   opts: NAuth0Options
-): string => {
-  return sign({ session }, opts.session.cookieSecret);
+): Promise<string> => {
+  const secret = new TextEncoder().encode(opts.session.cookieSecret);
+
+  return await new SignJWT({ session }).sign(secret);
 };
 
 export const isValidToken = (
