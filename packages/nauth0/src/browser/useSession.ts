@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
-import { Session } from 'src/lib';
-import { SessionContext } from '../components/SessionProvider';
+import { Session } from 'lib';
+import { SessionContext } from './SessionProvider';
 import fetch from 'unfetch';
 
 export const useSession = (): [Session, boolean] => {

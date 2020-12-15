@@ -9,9 +9,13 @@
   },
   "license": "MIT",
   "main": "dist/index.js",
+  "browser": "dist/index.browser.js",
   "files": [
     "dist"
   ],
+  "engines": {
+    "node": ">=12.19.0"
+  },
   "types": "dist/index.d.ts",
   "scripts": {
     "dev": "tsc --watch",
@@ -36,6 +40,10 @@
     "react-dom": "^16.0.0"
   },
   "dependencies": {
+    "base64url": "^3.0.1",
+    "jose": "3",
+    "nookies": "^2.5.0",
+    "openid-client": "^4.2.2",
     "unfetch": "^4.2.0"
   },
   "publishConfig": {

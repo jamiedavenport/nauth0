@@ -1,4 +1,4 @@
-export interface NAuth0Config {
+export interface NAuth0Options {
   domain: string;
   clientId: string;
   clientSecret: string;
