@@ -9,5 +9,5 @@ export interface NAuth0Client<> {
       | {
           req: NextApiRequest;
         }
-  ): Promise<Session>;
+  ): Promise<Session | null>;
 }

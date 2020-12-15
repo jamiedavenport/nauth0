@@ -28,7 +28,7 @@ class ServerNAuth0Client implements NAuth0Client {
       | {
           req: NextApiRequest;
         }
-  ): Promise<Session> {
+  ): Promise<Session | null> {
     return getSessionFromReq(req, this.opts);
   }
 }

@@ -40,12 +40,12 @@ export const getSessionFromReq = async (
         req: NextApiRequest;
       },
   opts: NAuth0Options
-): Promise<Session> => {
+): Promise<Session | null> => {
   const cookies = parseCookies(req);
   const rawToken = cookies[sessionCookie];
 
   if (typeof rawToken === 'undefined') {
-    throw new Error('Unauthorized'); // TODO: Throw a specific UnauthorizedError and then return 401 from the handler
+    return null;
   }
 
   const secret = new TextEncoder().encode(opts.session.cookieSecret);

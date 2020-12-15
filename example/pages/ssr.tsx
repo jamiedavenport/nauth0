@@ -18,7 +18,14 @@ const Home: React.FC = () => {
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const session = await nauth0.getSession(ctx);
 
-  // TODO: Handle unauthenticated session
+  if (!session) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false,
+      },
+    };
+  }
 
   return {
     props: {
