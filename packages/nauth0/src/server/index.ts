@@ -1,8 +1,9 @@
-import { NextApiHandler, NextApiRequest } from 'next';
+import { NextApiHandler, NextApiRequest, NextPageContext } from 'next';
 import { NAuth0Client } from '../client';
 import { NAuth0Options } from './config';
 import { Session } from '../lib';
 import routes from './routes';
+import { getSessionFromReq } from './session';
 
 class ServerNAuth0Client implements NAuth0Client {
   constructor(private readonly opts: NAuth0Options) {}
@@ -21,10 +22,14 @@ class ServerNAuth0Client implements NAuth0Client {
     return apiHandler;
   }
 
-  getSession(): Session {
-    // TODO:
-
-    throw new Error('Method not implemented.');
+  getSession(
+    req:
+      | Pick<NextPageContext, 'req'>
+      | {
+          req: NextApiRequest;
+        }
+  ): Promise<Session> {
+    return getSessionFromReq(req, this.opts);
   }
 }
 

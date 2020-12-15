@@ -7,7 +7,7 @@ class BrowserNAuth0Client implements NAuth0Client {
     throw new Error('Handler only implemented for the server');
   }
 
-  getSession(): Session {
+  getSession(): Promise<Session> {
     throw new Error('Method not implemented.');
   }
 }

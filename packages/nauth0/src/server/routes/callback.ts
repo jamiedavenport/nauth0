@@ -25,6 +25,7 @@ export const callbackRoute: NAuth0ApiRoute = async (req, res, opts) => {
   setCookie({ res }, sessionCookie, encodedSession, {
     maxAge: opts.session.cookieLifetime ?? eightHoursInSeconds,
     httpOnly: true,
+    path: '/',
   });
 
   res
