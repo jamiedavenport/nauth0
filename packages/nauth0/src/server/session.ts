@@ -1,6 +1,6 @@
 import { TokenSet } from 'openid-client';
 import { NAuth0Options } from './config';
-import { Session } from '../lib';
+import { Session } from 'lib';
 import SignJWT from 'jose/jwt/sign';
 import jwtVerify from 'jose/jwt/verify';
 import { parseCookies } from 'nookies';
@@ -21,11 +21,15 @@ export const sessionFromTokenSet = (tokenSet: TokenSet): Session => {
   };
 };
 
+const encodeSecret = (secret: string): Uint8Array => {
+  return new TextEncoder().encode(secret);
+};
+
 export const encodeSession = async (
   session: Session,
   opts: NAuth0Options
 ): Promise<string> => {
-  const secret = new TextEncoder().encode(opts.session.cookieSecret);
+  const secret = encodeSecret(opts.session.cookieSecret);
 
   return await new SignJWT({ session })
     .setProtectedHeader({ alg: 'HS256' })
@@ -44,7 +48,7 @@ export const getSessionFromReq = async (
     return null;
   }
 
-  const secret = new TextEncoder().encode(opts.session.cookieSecret);
+  const secret = encodeSecret(opts.session.cookieSecret);
   const { payload } = await jwtVerify(rawToken, secret);
 
   return payload.session;
