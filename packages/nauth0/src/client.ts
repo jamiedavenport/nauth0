@@ -7,7 +7,7 @@ export type GetSessionOpts =
       req: NextApiRequest;
     };
 
-export interface NAuth0Client<> {
+export interface NAuth0Client {
   handler(): NextApiHandler;
   getSession(req: GetSessionOpts): Promise<Session | null>;
 }
