@@ -1,16 +1,15 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-/* eslint-disable @typescript-eslint/no-explicit-any */
+import BrowserNAuth0Client from './browser';
 import { NAuth0Client } from './client';
-import { NAuth0Options } from './server';
+import ServerNAuth0Client, { NAuth0Options } from './server';
 
 export default (opts: NAuth0Options): NAuth0Client => {
   const isBrowser = typeof window !== 'undefined';
 
   if (isBrowser) {
-    return new (require('./client').default)(opts);
+    return new BrowserNAuth0Client();
   }
 
-  return new (require('./server').default)(opts);
+  return new ServerNAuth0Client(opts);
 };
 
 export * from './browser';

@@ -1,9 +1,8 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-/* eslint-disable @typescript-eslint/no-explicit-any */
+import BrowserNAuth0Client from './browser';
 import { NAuth0Client } from './client';
 
 export default (): NAuth0Client => {
-  return new (require('./client').default)();
+  return new BrowserNAuth0Client();
 };
 
 export * from './browser';
