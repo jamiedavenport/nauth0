@@ -27,6 +27,10 @@ export default nauth0({
 
 The Auth0 Domain, Client ID and Client Secret can be found by creating the application within the Auth0 dashboard.
 
+## Requirements
+
+- Node >= 12.19.0
+
 ## Auth0 Configuration
 
 Create a new Regular Web Application with the following settings:

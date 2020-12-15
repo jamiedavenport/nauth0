@@ -7,6 +7,9 @@
   "author": "Jamie Davenport <1329874+jamiedavenport@users.noreply.github.com>",
   "private": true,
   "license": "MIT",
+  "engines": {
+    "node": ">=12.19.0"
+  },
   "scripts": {
     "dev": "lerna run --parallel dev",
     "build": "lerna run build",
