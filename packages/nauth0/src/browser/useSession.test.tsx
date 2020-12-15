@@ -1,10 +1,10 @@
 import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import { useSession } from './useSession';
-import { SessionProvider } from '../components/SessionProvider';
+import { SessionProvider } from './SessionProvider';
 import { rest } from 'msw';
 import { setupServer } from 'msw/node';
-import { Session } from 'src/lib';
+import { Session } from 'lib';
 import '@testing-library/jest-dom'; // TODO: How can I import the type definitions for extend-expect automatically?
 
 const App: React.FC = () => {
