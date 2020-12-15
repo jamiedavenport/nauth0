@@ -23,20 +23,8 @@ export const encodeSession = async (
 ): Promise<string> => {
   const secret = new TextEncoder().encode(opts.session.cookieSecret);
 
-  return await new SignJWT({ session }).sign(secret);
-};
-
-export const isValidToken = (
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  decodedToken: string | object
-): decodedToken is Token => {
-  if (typeof decodedToken !== 'object') {
-    return false;
-  }
-
-  if ((decodedToken as Token).session === undefined) {
-    return false;
-  }
-
-  return true;
+  return await new SignJWT({ session })
+    .setProtectedHeader({ alg: 'HS256' })
+    .setIssuedAt()
+    .sign(secret);
 };

@@ -7,6 +7,7 @@ export default nauth0({
   redirectUri: 'http://localhost:3000/api/auth/callback',
   scope: 'openid profile',
   session: {
-    cookieSecret: 'superdupersecret',
+    cookieSecret:
+      'superdupersecretsuperdupersecretsuperdupersecretsuperdupersecret',
   },
 });
