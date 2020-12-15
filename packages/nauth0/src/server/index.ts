@@ -1,5 +1,5 @@
-import { NextApiHandler, NextApiRequest, NextPageContext } from 'next';
-import { NAuth0Client } from '../client';
+import { NextApiHandler, NextApiRequest } from 'next';
+import { GetSessionOpts, NAuth0Client } from '../client';
 import { NAuth0Options } from './config';
 import { Session } from '../lib';
 import routes from './routes';
@@ -22,13 +22,7 @@ class ServerNAuth0Client implements NAuth0Client {
     return apiHandler;
   }
 
-  getSession(
-    req:
-      | Pick<NextPageContext, 'req'>
-      | {
-          req: NextApiRequest;
-        }
-  ): Promise<Session | null> {
+  getSession(req: GetSessionOpts): Promise<Session | null> {
     return getSessionFromReq(req, this.opts);
   }
 }
