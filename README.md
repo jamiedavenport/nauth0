@@ -64,53 +64,17 @@ Create a new Regular Web Application with the following settings:
 
 ### `useSession`
 
-```tsx
-import { useSession } from 'nauth0';
-
-const Home: React.FC = () => {
-  const [session, isLoading] = useSession();
-
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-
-  const { user } = session;
-
-  if (!user) {
-    return <a href="/api/auth/login">Login</a>;
-  }
-
-  return (
-    <code>
-      <pre>{JSON.stringify(user)}</pre>
-    </code>
-  );
-};
-```
+[Example](https://github.com/jamiedavenport/nauth0/blob/main/example/pages/index.tsx)
 
 ### `getSession`
 
-Server-side & Client-side!
+[Example](https://github.com/jamiedavenport/nauth0/blob/main/example/pages/ssr.tsx)
 
 ### `SessionProvider`
 
 `SessionProvider` allows the user session to be shared across the application and injected on the server-side to avoid loading screens. Highly recommended!
 
-```tsx
-import React from 'react';
-import type { AppProps } from 'next/app';
-import { SessionProvider } from 'nauth0';
-
-function App({ Component, pageProps }: AppProps): JSX.Element {
-  return (
-    <SessionProvider value={pageProps.session}>
-      <Component {...pageProps} />
-    </SessionProvider>
-  );
-}
-
-export default App;
-```
+[Example](https://github.com/jamiedavenport/nauth0/blob/main/example/pages/_app.tsx)
 
 ## Rest API
 
