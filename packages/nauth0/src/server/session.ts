@@ -2,10 +2,10 @@ import { TokenSet } from 'openid-client';
 import { NAuth0Options } from './config';
 import { Session } from '../lib';
 import SignJWT from 'jose/jwt/sign';
-import { NextApiRequest, NextPageContext } from 'next';
 import jwtVerify from 'jose/jwt/verify';
 import { parseCookies } from 'nookies';
 import { sessionCookie } from './cookies';
+import { GetSessionOpts } from 'client';
 
 export interface Token {
   session: Session;
@@ -34,11 +34,7 @@ export const encodeSession = async (
 };
 
 export const getSessionFromReq = async (
-  req:
-    | Pick<NextPageContext, 'req'>
-    | {
-        req: NextApiRequest;
-      },
+  req: GetSessionOpts,
   opts: NAuth0Options
 ): Promise<Session | null> => {
   const cookies = parseCookies(req);
