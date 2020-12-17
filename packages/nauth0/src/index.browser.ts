@@ -6,3 +6,4 @@ export default (): NAuth0Client => {
 };
 
 export * from './browser';
+export * from './lib';

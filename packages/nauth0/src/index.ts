@@ -14,3 +14,4 @@ export default (opts: NAuth0Options): NAuth0Client => {
 
 export * from './browser';
 export * from './server';
+export * from './lib';

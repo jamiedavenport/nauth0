@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
-import { Session } from 'lib';
+import { Session } from '../lib';
 import { SessionContext } from './SessionProvider';
 import fetch from 'unfetch';
 
