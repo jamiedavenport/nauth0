@@ -12,7 +12,7 @@ Install the dependencies:
 yarn add nauth0
 ```
 
-Add `/lib/nauth0` to your NextJS application. This creates your instantiated nauth0 instance that we'll use in the rest of your application.
+Add `/lib/nauth0.ts` to your NextJS application. This creates your instantiated nauth0 instance that we'll use in the rest of your application.
 
 ```ts
 import nauth0 from 'nauth0';
