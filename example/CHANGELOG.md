@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.1-canary.0](https://github.com/jamiedavenport/nauth0/compare/v0.4.0-canary.0...v0.4.1-canary.0) (2020-12-17)
+
+**Note:** Version bump only for package example
+
 # [0.4.0-canary.0](https://github.com/jamiedavenport/nauth0/compare/v0.3.3-canary.0...v0.4.0-canary.0) (2020-12-15)
 
 ### Features

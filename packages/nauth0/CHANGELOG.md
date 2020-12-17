@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.1-canary.0](https://github.com/jamiedavenport/nauth0/compare/v0.4.0-canary.0...v0.4.1-canary.0) (2020-12-17)
+
+### Bug Fixes
+
+- Remove baseUrl and rewrite imports as relative ([#33](https://github.com/jamiedavenport/nauth0/issues/33)) ([fc8a88a](https://github.com/jamiedavenport/nauth0/commit/fc8a88ae4ae303d24770efaf10e686f7898de29d))
+
 # [0.4.0-canary.0](https://github.com/jamiedavenport/nauth0/compare/v0.3.3-canary.0...v0.4.0-canary.0) (2020-12-15)
 
 ### Features

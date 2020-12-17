@@ -1,6 +1,6 @@
 {
   "name": "example",
-  "version": "0.4.0-canary.0",
+  "version": "0.4.1-canary.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -8,7 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "nauth0": "^0.4.0-canary.0",
+    "nauth0": "^0.4.1-canary.0",
     "next": "10.0.3",
     "react": "17.0.1",
     "react-dom": "17.0.1"
