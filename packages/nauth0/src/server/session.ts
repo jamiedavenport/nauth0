@@ -1,11 +1,11 @@
 import { TokenSet } from 'openid-client';
 import { NAuth0Options } from './config';
-import { Session } from 'lib';
+import { Session } from '../lib';
 import SignJWT from 'jose/jwt/sign';
 import jwtVerify from 'jose/jwt/verify';
 import { parseCookies } from 'nookies';
 import { sessionCookie } from './cookies';
-import { GetSessionOpts } from 'client';
+import { GetSessionOpts } from '../client';
 
 export interface Token {
   session: Session;

@@ -1,5 +1,5 @@
-import { Session } from 'lib';
-import { NAuth0Client } from 'client';
+import { Session } from '../lib';
+import { NAuth0Client } from '../client';
 import { NextApiHandler } from 'next';
 
 class BrowserNAuth0Client implements NAuth0Client {
