@@ -4,6 +4,7 @@ export interface NAuth0Options {
   clientSecret: string;
   scope: string;
   redirectUri: string;
+  logoutRedirectUri: string;
   audience?: string;
 
   session: {
