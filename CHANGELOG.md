@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0-canary.0](https://github.com/jamiedavenport/nauth0/compare/v0.4.1-canary.0...v0.5.0-canary.0) (2020-12-18)
+
+### Features
+
+- Logout route ([#34](https://github.com/jamiedavenport/nauth0/issues/34)) ([a88a46a](https://github.com/jamiedavenport/nauth0/commit/a88a46a86634ef98957cc1709d1ed6f9e9f074a5))
+
 ## [0.4.1-canary.0](https://github.com/jamiedavenport/nauth0/compare/v0.4.0-canary.0...v0.4.1-canary.0) (2020-12-17)
 
 ### Bug Fixes
