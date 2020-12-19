@@ -65,3 +65,6 @@ build
 
 # vercel
 .vercel
+
+# Cypress
+cypress.env.json
