@@ -68,6 +68,10 @@ Create a new Regular Web Application with the following settings:
 - SSR support
 - Works well with custom APIs
 
+## Refresh Tokens
+
+In order to get refresh tokens you need to request the `offline_access` scope.
+
 ## Client API
 
 ### `useSession`

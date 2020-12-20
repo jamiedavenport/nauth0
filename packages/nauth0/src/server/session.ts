@@ -18,6 +18,7 @@ export const sessionFromTokenSet = (tokenSet: TokenSet): Session => {
       id: claims.sub,
     },
     accessToken: tokenSet.access_token,
+    refreshToken: tokenSet.refresh_token,
   };
 };
 
