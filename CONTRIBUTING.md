@@ -8,6 +8,15 @@ Take a look at [How to Contribute to an Open Source Project on GitHub](https://e
 
 Look for issues with the [`good first issue`](https://github.com/jamiedavenport/nauth0/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22) tag.
 
+We follow the [All Contributors](https://allcontributors.org/) spec so please add yourself by running the following commands:
+
+```bash
+yarn contributors:add
+yarn contributors:generate
+```
+
+Don't forget to check and commit the changes.
+
 ## Development Setup
 
 First you need to fork and clone the repo. Then:

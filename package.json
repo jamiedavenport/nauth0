@@ -18,7 +18,9 @@
     "test": "lerna run --parallel test",
     "prepare:canary": "yarn build",
     "version:canary": "lerna version --create-release github --conventional-commits --preid canary",
-    "publish:canary": "lerna publish from-package --dist-tag canary --yes --no-verify-access"
+    "publish:canary": "lerna publish from-package --dist-tag canary --yes --no-verify-access",
+    "contributors:add": "all-contributors add",
+    "contributors:generate": "all-contributors generate"
   },
   "workspaces": [
     "packages/*",
@@ -31,6 +33,7 @@
     "@types/react": "^17.0.0",
     "@typescript-eslint/eslint-plugin": "^4.9.0",
     "@typescript-eslint/parser": "^4.9.0",
+    "all-contributors-cli": "^6.19.0",
     "cypress": "^6.1.0",
     "eslint": "^7.14.0",
     "eslint-plugin-cypress": "^2.11.2",
