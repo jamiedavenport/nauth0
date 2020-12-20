@@ -11,9 +11,12 @@ Look for issues with the [`good first issue`](https://github.com/jamiedavenport/
 We follow the [All Contributors](https://allcontributors.org/) spec so please add yourself by running the following commands:
 
 ```bash
-yarn contributors:add
+yarn contributors:add <username> <contribution>
 yarn contributors:generate
 ```
+
+- `username` is your GitHub username
+- `contribtuion` is the type of contribution you've made. See [this](https://allcontributors.org/docs/en/emoji-key) for a list of options.
 
 Don't forget to check and commit the changes.
 
