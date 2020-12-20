@@ -1,13 +1,23 @@
-import { NextApiHandler, NextApiRequest, NextPageContext } from 'next';
+import {
+  NextApiHandler,
+  NextApiRequest,
+  NextApiResponse,
+  NextPageContext,
+} from 'next';
 import { Session } from './lib';
 
-export type GetSessionOpts =
+export type ServerSideRequest =
   | Pick<NextPageContext, 'req'>
   | {
       req: NextApiRequest;
     };
 
+export type ServerSideResponse =
+  | Pick<NextPageContext, 'res'>
+  | {
+      res: NextApiResponse;
+    };
 export interface NAuth0Client {
   handler(): NextApiHandler;
-  getSession(req: GetSessionOpts): Promise<Session | null>;
+  getSession(req: ServerSideRequest): Promise<Session | null>;
 }

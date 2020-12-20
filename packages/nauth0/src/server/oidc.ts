@@ -1,7 +1,5 @@
 import base64url from 'base64url';
 import { randomBytes } from 'crypto';
-import { Client, Issuer } from 'openid-client';
-import { NAuth0Options } from './config';
 
 export const createState = (
   stateObject: Record<string, unknown> = {}
@@ -17,20 +15,3 @@ export const encodeState = (stateObject: Record<string, unknown>): string =>
 
 export const decodeState = (stateValue: string): Record<string, unknown> =>
   JSON.parse(base64url.decode(stateValue));
-
-export const createClient = async ({
-  domain,
-  clientId,
-  clientSecret,
-  redirectUri,
-}: NAuth0Options): Promise<Client> => {
-  const issuer = await Issuer.discover(`https://${domain}/`);
-  const client = new issuer.Client({
-    client_id: clientId,
-    client_secret: clientSecret,
-    redirect_uris: [redirectUri],
-    response_types: ['code'],
-  });
-
-  return client;
-};
