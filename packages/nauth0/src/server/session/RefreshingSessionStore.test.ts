@@ -34,13 +34,13 @@ describe('RefreshingSessionStore', () => {
       refreshFunction
     );
 
-    const { req, res } = createMocks();
+    const ctx = createMocks();
 
-    await sessionStore.save(req, res, expiredSession);
+    await sessionStore.save(ctx, expiredSession);
 
-    expect(await sessionStore.get(req, res)).toEqual(latestSession);
-    expect(await sessionStore.get(req, res)).toEqual(latestSession);
-    expect(await sessionStore.get(req, res)).toEqual(latestSession);
+    expect(await sessionStore.get(ctx)).toEqual(latestSession);
+    expect(await sessionStore.get(ctx)).toEqual(latestSession);
+    expect(await sessionStore.get(ctx)).toEqual(latestSession);
     expect(refreshFunction).toBeCalledTimes(1);
   });
 });
