@@ -10,6 +10,8 @@ Look for issues with the [`good first issue`](https://github.com/jamiedavenport/
 
 We follow the [All Contributors](https://allcontributors.org/) spec so please add yourself by running the following commands:
 
+### All Contributors
+
 ```bash
 yarn contributors:add <username> <contribution>
 yarn contributors:generate
