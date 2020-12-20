@@ -7,5 +7,6 @@ export interface SessionStore {
     res: ServerSideResponse,
     session: Session
   ): Promise<void>;
-  get(req: ServerSideRequest): Promise<Session | null>;
+
+  get(req: ServerSideRequest, res: ServerSideResponse): Promise<Session | null>;
 }

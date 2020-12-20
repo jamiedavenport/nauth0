@@ -1,18 +1,17 @@
 import { NextApiHandler, NextApiRequest, NextApiResponse } from 'next';
 import { destroyCookie, parseCookies, setCookie } from 'nookies';
-import { Client, Issuer } from 'openid-client';
 import { NAuth0Options } from './config';
 import { sessionCookie, stateCookie } from './cookies';
 import { createState } from './oidc';
+import OidcClientProvider from './OidcClientProvider';
 import { sessionFromTokenSet } from './session';
 import { SessionStore } from './session/store';
 
 export class RouteHandler {
-  private client: Client | undefined;
-
   constructor(
     private readonly opts: NAuth0Options,
-    private readonly sessionStore: SessionStore
+    private readonly sessionStore: SessionStore,
+    private readonly clientProvider: OidcClientProvider
   ) {}
 
   private tempRedirect(res: NextApiResponse, location: string) {
@@ -23,29 +22,13 @@ export class RouteHandler {
       .end();
   }
 
-  private async getClient(): Promise<Client> {
-    if (this.client) return this.client;
-
-    const { domain, clientId, clientSecret, redirectUri } = this.opts;
-
-    const issuer = await Issuer.discover(`https://${domain}/`);
-    this.client = new issuer.Client({
-      client_id: clientId,
-      client_secret: clientSecret,
-      redirect_uris: [redirectUri],
-      response_types: ['code'],
-    });
-
-    return this.client;
-  }
-
   private async login(
     req: NextApiRequest,
     res: NextApiResponse
   ): Promise<void> {
     const state = createState();
 
-    const client = await this.getClient();
+    const client = await this.clientProvider.getClient();
     const authorizationUrl = client.authorizationUrl({
       redirect_uri: this.opts.redirectUri,
       scope: this.opts.scope,
@@ -77,7 +60,7 @@ export class RouteHandler {
       throw new Error('Missing state cookie');
     }
 
-    const client = await this.getClient();
+    const client = await this.clientProvider.getClient();
     const params = client.callbackParams(req);
     const tokenSet = await client.callback(this.opts.redirectUri, params, {
       state,
@@ -111,7 +94,7 @@ export class RouteHandler {
     req: NextApiRequest,
     res: NextApiResponse
   ): Promise<void> {
-    const session = await this.sessionStore.get({ req });
+    const session = await this.sessionStore.get({ req }, { res });
 
     if (!session) {
       res.status(401).end();

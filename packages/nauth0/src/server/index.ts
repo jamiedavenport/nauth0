@@ -1,5 +1,5 @@
 import { NextApiHandler } from 'next';
-import { NAuth0Client, ServerSideRequest } from '../client';
+import { NAuth0Client, ServerSideRequest, ServerSideResponse } from '../client';
 import { NAuth0Options } from './config';
 import { Session } from '../lib';
 import { RouteHandler } from './RouteHandler';
@@ -16,8 +16,11 @@ class ServerNAuth0Client implements NAuth0Client {
     return this.routeHandler.handler();
   }
 
-  getSession(req: ServerSideRequest): Promise<Session | null> {
-    return this.sessionStore.get(req);
+  getSession(
+    req: ServerSideRequest,
+    res: ServerSideResponse
+  ): Promise<Session | null> {
+    return this.sessionStore.get(req, res);
   }
 }
 

@@ -19,5 +19,8 @@ export type ServerSideResponse =
     };
 export interface NAuth0Client {
   handler(): NextApiHandler;
-  getSession(req: ServerSideRequest): Promise<Session | null>;
+  getSession(
+    req: ServerSideRequest,
+    res: ServerSideResponse
+  ): Promise<Session | null>;
 }
