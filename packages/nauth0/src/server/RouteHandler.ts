@@ -67,7 +67,7 @@ export class RouteHandler {
     });
 
     const session = sessionFromTokenSet(tokenSet);
-    await this.sessionStore.save({ req }, { res }, session);
+    await this.sessionStore.save({ req, res }, session);
 
     this.tempRedirect(res, '/'); // TODO: Get the redirectUri
   }
@@ -94,7 +94,7 @@ export class RouteHandler {
     req: NextApiRequest,
     res: NextApiResponse
   ): Promise<void> {
-    const session = await this.sessionStore.get({ req }, { res });
+    const session = await this.sessionStore.get({ req, res });
 
     if (!session) {
       res.status(401).end();

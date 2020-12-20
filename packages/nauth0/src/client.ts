@@ -6,21 +6,14 @@ import {
 } from 'next';
 import { Session } from './lib';
 
-export type ServerSideRequest =
-  | Pick<NextPageContext, 'req'>
+export type Context =
+  | Pick<NextPageContext, 'req' | 'res'>
   | {
       req: NextApiRequest;
-    };
-
-export type ServerSideResponse =
-  | Pick<NextPageContext, 'res'>
-  | {
       res: NextApiResponse;
     };
+
 export interface NAuth0Client {
   handler(): NextApiHandler;
-  getSession(
-    req: ServerSideRequest,
-    res: ServerSideResponse
-  ): Promise<Session | null>;
+  getSession(ctx: Context): Promise<Session | null>;
 }

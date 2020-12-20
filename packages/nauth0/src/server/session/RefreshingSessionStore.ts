@@ -1,4 +1,4 @@
-import { ServerSideRequest, ServerSideResponse } from '../../client';
+import { Context } from '../../client';
 import { Session } from '../../lib';
 import { SessionStore } from './store';
 
@@ -21,19 +21,12 @@ export default class RefreshingSessionStore implements SessionStore {
     return expiresAt * 1000 < Date.now();
   }
 
-  save(
-    req: ServerSideRequest,
-    res: ServerSideResponse,
-    session: Session
-  ): Promise<void> {
-    return this.sessionStore.save(req, res, session);
+  save(ctx: Context, session: Session): Promise<void> {
+    return this.sessionStore.save(ctx, session);
   }
 
-  async get(
-    req: ServerSideRequest,
-    res: ServerSideResponse
-  ): Promise<Session | null> {
-    const session = await this.sessionStore.get(req, res);
+  async get(ctx: Context): Promise<Session | null> {
+    const session = await this.sessionStore.get(ctx);
 
     if (!session) {
       return null;
@@ -42,7 +35,7 @@ export default class RefreshingSessionStore implements SessionStore {
     if (this.isExpired(session)) {
       const refreshedSession = await this.refreshFunction(session);
 
-      await this.save(req, res, refreshedSession);
+      await this.save(ctx, refreshedSession);
 
       return refreshedSession;
     }

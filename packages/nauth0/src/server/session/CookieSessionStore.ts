@@ -1,7 +1,7 @@
 import SignJWT from 'jose/jwt/sign';
 import jwtVerify from 'jose/jwt/verify';
 import { parseCookies, setCookie } from 'nookies';
-import { ServerSideRequest, ServerSideResponse } from '../../client';
+import { Context } from '../../client';
 import { Session } from '../../lib';
 import { NAuth0Options } from '../config';
 import { sessionCookie } from '../cookies';
@@ -21,23 +21,19 @@ export class CookieSessionStore implements SessionStore {
       .sign(this.secret);
   }
 
-  async save(
-    req: ServerSideRequest,
-    res: ServerSideResponse,
-    session: Session
-  ): Promise<void> {
+  async save(ctx: Context, session: Session): Promise<void> {
     const encodedSession = await this.encodeSession(session);
 
     const eightHoursInSeconds = 60 * 60 * 8; // TODO: Handle optional config better
-    setCookie(res, sessionCookie, encodedSession, {
+    setCookie(ctx, sessionCookie, encodedSession, {
       maxAge: this.opts.session.cookieLifetime ?? eightHoursInSeconds,
       httpOnly: true,
       path: '/',
     });
   }
 
-  async get(req: ServerSideRequest): Promise<Session | null> {
-    const cookies = parseCookies(req);
+  async get(ctx: Context): Promise<Session | null> {
+    const cookies = parseCookies(ctx);
     const rawToken = cookies[sessionCookie];
 
     if (typeof rawToken === 'undefined') {
