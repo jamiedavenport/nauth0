@@ -12,7 +12,7 @@ const expiredSession: Session = {
   refreshToken: 'refreshToken',
 };
 
-const latestSession: Session = {
+const validSession: Session = {
   user: {
     id: '1',
   },
@@ -24,23 +24,51 @@ const latestSession: Session = {
 jest.useFakeTimers('modern').setSystemTime(1);
 
 describe('RefreshingSessionStore', () => {
+  const refreshFunction = jest.fn().mockResolvedValue(validSession);
+
+  const backingSessionStore = new MemorySessionStore();
+  const sessionStore = new RefreshingSessionStore(
+    backingSessionStore,
+    refreshFunction
+  );
+
+  const ctx = createMocks();
+
+  beforeEach(() => {
+    refreshFunction.mockClear();
+    backingSessionStore.reset();
+  });
+
   it('should refresh the session when expired', async () => {
-    const refreshFunction = jest.fn();
-    refreshFunction.mockResolvedValue(latestSession);
-
-    const backingSessionStore = new MemorySessionStore();
-    const sessionStore = new RefreshingSessionStore(
-      backingSessionStore,
-      refreshFunction
-    );
-
-    const ctx = createMocks();
-
     await sessionStore.save(ctx, expiredSession);
 
-    expect(await sessionStore.get(ctx)).toEqual(latestSession);
-    expect(await sessionStore.get(ctx)).toEqual(latestSession);
-    expect(await sessionStore.get(ctx)).toEqual(latestSession);
+    expect(await sessionStore.get(ctx)).toEqual(validSession);
+    expect(await sessionStore.get(ctx)).toEqual(validSession);
+    expect(await sessionStore.get(ctx)).toEqual(validSession);
     expect(refreshFunction).toBeCalledTimes(1);
+  });
+
+  it('works when the user is not authenticated', async () => {
+    expect(await sessionStore.get(ctx)).toBeNull();
+  });
+
+  it('should throw an error when the session is expired and `refreshToken` is missing', async () => {
+    const invalidSession: Session = {
+      ...expiredSession,
+      refreshToken: undefined,
+    };
+    await sessionStore.save(ctx, invalidSession);
+
+    await expect(sessionStore.get(ctx)).rejects.toMatchInlineSnapshot(
+      `[Error: Session has expired and the refreshToken is missing. Did you forget the \`offline_access\` scope?]`
+    );
+  });
+  it('should throw an error when the `expiresAt` is missing', async () => {
+    const invalidSession: Session = { ...validSession, expiresAt: undefined };
+    await sessionStore.save(ctx, invalidSession);
+
+    await expect(sessionStore.get(ctx)).rejects.toMatchInlineSnapshot(
+      `[Error: Missing expiresAt]`
+    );
   });
 });

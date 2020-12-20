@@ -12,4 +12,8 @@ export default class MemorySessionStore implements SessionStore {
   async get(): Promise<Session | null> {
     return this.session;
   }
+
+  reset(): void {
+    this.session = null;
+  }
 }
