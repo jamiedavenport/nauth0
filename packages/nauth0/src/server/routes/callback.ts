@@ -30,7 +30,7 @@ export const callbackRoute: NAuth0ApiRoute = async (req, res, opts) => {
 
   res
     .writeHead(302, {
-      Location: '/', // TODO: Get the redirectUri
+      Location: opts.loginRedirectUri ? opts.loginRedirectUri : '/',
     })
     .end();
 };

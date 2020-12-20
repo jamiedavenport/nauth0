@@ -5,6 +5,7 @@ export interface NAuth0Options {
   scope: string;
   redirectUri: string;
   logoutRedirectUri: string;
+  loginRedirectUri?: string;
   audience?: string;
 
   session: {
