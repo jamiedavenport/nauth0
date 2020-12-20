@@ -15,6 +15,14 @@ export class RouteHandler {
     private readonly sessionStore: SessionStore
   ) {}
 
+  private tempRedirect(res: NextApiResponse, location: string) {
+    res
+      .writeHead(302, {
+        Location: location,
+      })
+      .end();
+  }
+
   private async getClient(): Promise<Client> {
     if (this.client) return this.client;
 
@@ -51,11 +59,7 @@ export class RouteHandler {
       httpOnly: true,
     });
 
-    res
-      .writeHead(302, {
-        Location: authorizationUrl,
-      })
-      .end();
+    this.tempRedirect(res, authorizationUrl);
   }
 
   private notFound(req: NextApiRequest, res: NextApiResponse): void {
@@ -82,11 +86,7 @@ export class RouteHandler {
     const session = sessionFromTokenSet(tokenSet);
     await this.sessionStore.save({ req }, { res }, session);
 
-    res
-      .writeHead(302, {
-        Location: '/', // TODO: Get the redirectUri
-      })
-      .end();
+    this.tempRedirect(res, '/'); // TODO: Get the redirectUri
   }
 
   private async logout(
@@ -104,11 +104,7 @@ export class RouteHandler {
       path: '/',
     });
 
-    res
-      .writeHead(302, {
-        Location: endSessionUrl,
-      })
-      .end();
+    this.tempRedirect(res, endSessionUrl);
   }
 
   private async session(
