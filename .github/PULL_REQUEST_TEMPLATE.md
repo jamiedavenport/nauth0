@@ -2,7 +2,8 @@
 
 ### Checklist
 
-- [ ] Tests added for changes
+- [ ] Documentation
+- [ ] Tests
 
 ### First time contributor?
 
