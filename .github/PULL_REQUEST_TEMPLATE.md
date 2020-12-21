@@ -2,4 +2,9 @@
 
 ### Checklist
 
-- [ ] Tests added for changes
+- [ ] Documentation
+- [ ] Tests
+
+### First time contributor?
+
+- [ ] Add your contributions to the README. [Instructions](/CONTRIBUTING.md)

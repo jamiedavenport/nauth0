@@ -8,6 +8,20 @@ Take a look at [How to Contribute to an Open Source Project on GitHub](https://e
 
 Look for issues with the [`good first issue`](https://github.com/jamiedavenport/nauth0/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22) tag.
 
+We follow the [All Contributors](https://allcontributors.org/) spec so please add yourself by running the following commands:
+
+### All Contributors
+
+```bash
+yarn contributors:add <username> <contribution>
+yarn contributors:generate
+```
+
+- `username` is your GitHub username
+- `contribtuion` is the type of contribution you've made. See [this](https://allcontributors.org/docs/en/emoji-key) for a list of options.
+
+Don't forget to check and commit the changes.
+
 ## Development Setup
 
 First you need to fork and clone the repo. Then:
@@ -22,6 +36,8 @@ yarn dev
 # Test
 yarn test --watch
 ```
+
+If you're using linux, you will need to install some [dependencies](https://docs.cypress.io/guides/getting-started/installing-cypress.html#Linux) so that [cypress](https://www.cypress.io/) will work for tests.
 
 ### Example Application
 
