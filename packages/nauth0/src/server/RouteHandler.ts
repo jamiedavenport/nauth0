@@ -2,10 +2,10 @@ import { NextApiHandler, NextApiRequest, NextApiResponse } from 'next';
 import { destroyCookie, parseCookies, setCookie } from 'nookies';
 import { NAuth0Options } from './config';
 import { sessionCookie, stateCookie } from './cookies';
-import { createState, decodeState } from './oidc';
+import { createState, decodeState } from './state';
 import OidcClientProvider from './OidcClientProvider';
 import { sessionFromTokenSet } from './session';
-import { SessionStore } from './session/store';
+import SessionStore from './session/SessionStore';
 
 export const redirectKey = 'redirectTo';
 
@@ -19,7 +19,7 @@ const redirectToFromReq = (req: NextApiRequest): string | null => {
   return null;
 };
 
-export class RouteHandler {
+export default class RouteHandler {
   constructor(
     private readonly opts: NAuth0Options,
     private readonly sessionStore: SessionStore,

@@ -3,7 +3,7 @@ import { NAuth0Client } from './client';
 import { Session } from './lib';
 import ServerNAuth0Client, { NAuth0Options } from './server';
 import OidcClientProvider from './server/OidcClientProvider';
-import { RouteHandler } from './server/RouteHandler';
+import RouteHandler from './server/RouteHandler';
 import { sessionFromTokenSet } from './server/session';
 import { CookieSessionStore } from './server/session/CookieSessionStore';
 import RefreshingSessionStore from './server/session/RefreshingSessionStore';

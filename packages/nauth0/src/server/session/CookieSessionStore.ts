@@ -5,7 +5,7 @@ import { Context } from '../../client';
 import { Session } from '../../lib';
 import { NAuth0Options } from '../config';
 import { sessionCookie } from '../cookies';
-import { SessionStore } from './store';
+import SessionStore from './SessionStore';
 
 export class CookieSessionStore implements SessionStore {
   private readonly secret: Uint8Array;

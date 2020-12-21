@@ -1,4 +1,4 @@
-import { createState, decodeState } from './oidc';
+import { createState, decodeState } from './state';
 
 describe('oidc', () => {
   describe('createState', () => {

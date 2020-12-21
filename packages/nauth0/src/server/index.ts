@@ -2,8 +2,8 @@ import { NextApiHandler } from 'next';
 import { Context, NAuth0Client } from '../client';
 import { NAuth0Options } from './config';
 import { Session } from '../lib';
-import { RouteHandler } from './RouteHandler';
-import { SessionStore } from './session/store';
+import RouteHandler from './RouteHandler';
+import SessionStore from './session/SessionStore';
 
 class ServerNAuth0Client implements NAuth0Client {
   constructor(

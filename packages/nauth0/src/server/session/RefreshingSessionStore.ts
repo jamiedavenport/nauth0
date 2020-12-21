@@ -1,6 +1,6 @@
 import { Context } from '../../client';
 import { Session } from '../../lib';
-import { SessionStore } from './store';
+import SessionStore from './SessionStore';
 
 export interface RefreshFunction {
   (currentSession: Session): Promise<Session>;

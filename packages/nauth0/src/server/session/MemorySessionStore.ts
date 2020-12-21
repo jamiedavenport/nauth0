@@ -1,6 +1,6 @@
 import { Context } from '../../client';
 import { Session } from '../../lib';
-import { SessionStore } from './store';
+import SessionStore from './SessionStore';
 
 export default class MemorySessionStore implements SessionStore {
   private session: Session | null = null;
