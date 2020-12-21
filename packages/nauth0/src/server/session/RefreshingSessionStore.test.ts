@@ -52,16 +52,14 @@ describe('RefreshingSessionStore', () => {
     expect(await sessionStore.get(ctx)).toBeNull();
   });
 
-  it('should throw an error when the session is expired and `refreshToken` is missing', async () => {
+  it('should return null when the session is expired and `refreshToken` is missing', async () => {
     const invalidSession: Session = {
       ...expiredSession,
       refreshToken: undefined,
     };
     await sessionStore.save(ctx, invalidSession);
 
-    await expect(sessionStore.get(ctx)).rejects.toMatchInlineSnapshot(
-      `[Error: Session has expired and the refreshToken is missing. Did you forget the \`offline_access\` scope?]`
-    );
+    expect(await sessionStore.get(ctx)).toBeNull();
   });
   it('should throw an error when the `expiresAt` is missing', async () => {
     const invalidSession: Session = { ...validSession, expiresAt: undefined };

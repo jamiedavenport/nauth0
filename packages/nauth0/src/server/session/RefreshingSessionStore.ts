@@ -34,9 +34,7 @@ export default class RefreshingSessionStore implements SessionStore {
 
     if (this.isExpired(session)) {
       if (typeof session.refreshToken === 'undefined') {
-        throw new Error(
-          'Session has expired and the refreshToken is missing. Did you forget the `offline_access` scope?'
-        );
+        return null;
       }
 
       const refreshedSession = await this.refreshFunction(session);

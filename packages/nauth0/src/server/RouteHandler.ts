@@ -114,8 +114,7 @@ export default class RouteHandler {
     const session = await this.sessionStore.get({ req, res });
 
     if (!session) {
-      res.status(401).end();
-      return;
+      return res.status(401).end();
     }
 
     res.json(session);
@@ -130,20 +129,20 @@ export default class RouteHandler {
       const action = this.getActionFromRequest(req);
       switch (action) {
         case 'login':
-          this.login(req, res);
+          await this.login(req, res);
           break;
         case 'callback':
-          this.callback(req, res);
+          await this.callback(req, res);
           break;
         case 'logout':
-          this.logout(req, res);
+          await this.logout(req, res);
           break;
         case 'session':
-          this.session(req, res);
+          await this.session(req, res);
           break;
 
         default:
-          this.notFound(req, res);
+          await this.notFound(req, res);
       }
     };
 
