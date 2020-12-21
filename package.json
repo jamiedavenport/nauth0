@@ -16,6 +16,8 @@
     "format:all": "yarn run format --write .",
     "format:check": "yarn run format --check .",
     "test": "lerna run --parallel test",
+    "prepack": "cp README.md packages/nauth0",
+    "postpack": "rm packages/nauth0/README.md",
     "prepare:canary": "yarn build",
     "version:canary": "lerna version --create-release github --conventional-commits --preid canary",
     "publish:canary": "lerna publish from-package --dist-tag canary --yes --no-verify-access",
