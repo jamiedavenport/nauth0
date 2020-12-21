@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0-canary.0](https://github.com/jamiedavenport/nauth0/compare/v0.6.0-canary.0...v0.7.0-canary.0) (2020-12-21)
+
+### Features
+
+- Refresh Tokens ([#37](https://github.com/jamiedavenport/nauth0/issues/37)) ([6244edc](https://github.com/jamiedavenport/nauth0/commit/6244edc48d2546c02cfd888bdb61d80a5c6a247c))
+
 # [0.6.0-canary.0](https://github.com/jamiedavenport/nauth0/compare/v0.5.0-canary.0...v0.6.0-canary.0) (2020-12-21)
 
 **Note:** Version bump only for package example
