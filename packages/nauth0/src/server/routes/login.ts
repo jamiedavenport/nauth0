@@ -2,14 +2,14 @@ import { NAuth0ApiRoute } from './route';
 import { createClient, createState } from '../oidc';
 import { setCookie } from 'nookies';
 import { stateCookie } from '../cookies';
-import { RedirectKey } from '../config';
+import { redirectKey } from '../config';
 
 export const loginRoute: NAuth0ApiRoute = async (req, res, opts) => {
   const client = await createClient(opts);
   const state = createState(
-    req.query[RedirectKey]
+    req.query[redirectKey]
       ? {
-          [RedirectKey]: req.query[RedirectKey],
+          [redirectKey]: req.query[redirectKey],
         }
       : {}
   );

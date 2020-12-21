@@ -14,4 +14,4 @@ export interface NAuth0Options {
   };
 }
 
-export const RedirectKey = 'redirectTo';
+export const redirectKey = 'redirectTo';
