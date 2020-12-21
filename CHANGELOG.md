@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0-canary.0](https://github.com/jamiedavenport/nauth0/compare/v0.5.0-canary.0...v0.6.0-canary.0) (2020-12-21)
+
+### Features
+
+- Adds optional login redirect uri to options and redirects to it on callback if it exists. ([#40](https://github.com/jamiedavenport/nauth0/issues/40)) ([b1309d5](https://github.com/jamiedavenport/nauth0/commit/b1309d5a666fff606ee2e6b7294f38dd7de9e1aa))
+
 # [0.5.0-canary.0](https://github.com/jamiedavenport/nauth0/compare/v0.4.1-canary.0...v0.5.0-canary.0) (2020-12-18)
 
 ### Features
