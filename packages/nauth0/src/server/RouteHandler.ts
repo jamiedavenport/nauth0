@@ -2,10 +2,22 @@ import { NextApiHandler, NextApiRequest, NextApiResponse } from 'next';
 import { destroyCookie, parseCookies, setCookie } from 'nookies';
 import { NAuth0Options } from './config';
 import { sessionCookie, stateCookie } from './cookies';
-import { createState } from './oidc';
+import { createState, decodeState } from './oidc';
 import OidcClientProvider from './OidcClientProvider';
 import { sessionFromTokenSet } from './session';
 import { SessionStore } from './session/store';
+
+export const redirectKey = 'redirectTo';
+
+const redirectToFromReq = (req: NextApiRequest): string | null => {
+  const param = req.query[redirectKey];
+  if (typeof param === 'string') {
+    return param;
+  } else if (Array.isArray(param) && typeof param[0] === 'string') {
+    return param[0];
+  }
+  return null;
+};
 
 export class RouteHandler {
   constructor(
@@ -26,7 +38,9 @@ export class RouteHandler {
     req: NextApiRequest,
     res: NextApiResponse
   ): Promise<void> {
-    const state = createState();
+    const state = createState({
+      [redirectKey]: redirectToFromReq(req),
+    });
 
     const client = await this.clientProvider.getClient();
     const authorizationUrl = client.authorizationUrl({
@@ -69,7 +83,10 @@ export class RouteHandler {
     const session = sessionFromTokenSet(tokenSet);
     await this.sessionStore.save({ req, res }, session);
 
-    this.tempRedirect(res, '/'); // TODO: Get the redirectUri
+    const decodedState = decodeState(state);
+    const redirect = decodedState[redirectKey] as string;
+
+    this.tempRedirect(res, redirect ?? this.opts.postLoginRedirectUri ?? '/');
   }
 
   private async logout(
