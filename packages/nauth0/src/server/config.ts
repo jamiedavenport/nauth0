@@ -13,5 +13,3 @@ export interface NAuth0Options {
     cookieLifetime?: number;
   };
 }
-
-export const redirectKey = 'redirectTo';
