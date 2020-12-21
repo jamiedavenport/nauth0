@@ -10,6 +10,12 @@ export const sessionFromTokenSet = (tokenSet: TokenSet): Session => {
   return {
     user: {
       id: claims.sub,
+      name: claims.name,
+      givenName: claims.given_name,
+      familyName: claims.family_name,
+      email: claims.email,
+      emailVerified: claims.email_verified,
+      picture: claims.picture,
     },
     expiresAt: tokenSet.expires_at,
     accessToken: tokenSet.access_token,
