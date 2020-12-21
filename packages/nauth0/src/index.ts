@@ -5,7 +5,7 @@ import ServerNAuth0Client, { NAuth0Options } from './server';
 import OidcClientProvider from './server/OidcClientProvider';
 import RouteHandler from './server/RouteHandler';
 import { sessionFromTokenSet } from './server/session';
-import { CookieSessionStore } from './server/session/CookieSessionStore';
+import CookieSessionStore from './server/session/CookieSessionStore';
 import RefreshingSessionStore from './server/session/RefreshingSessionStore';
 
 export default (opts: NAuth0Options): NAuth0Client => {
