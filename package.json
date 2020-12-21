@@ -1,5 +1,5 @@
 {
-  "name": "nauth0",
+  "name": "root",
   "version": "0.1.0",
   "description": "Easy and awesome authentication for NextJS applications using Auth0",
   "main": "index.js",
