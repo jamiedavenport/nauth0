@@ -29,6 +29,7 @@ export default nauth0({
   clientSecret: process.env.AUTH0_CLIENT_SECRET,
   redirectUri: 'http://localhost:3000/api/auth/callback',
   logoutRedirectUri: 'http://localhost:3000/',
+  postLoginRedirectUri: 'http://localhost:3000/profile', // Optional global configuration of post login page.
   scope: 'openid profile',
   session: {
     cookieSecret: 'supersecret',
@@ -86,6 +87,10 @@ Create a new Regular Web Application with the following settings:
 ## Rest API
 
 ### `/api/auth/login`
+
+Query parameters:
+
+- `redirectTo`: Redirects the user to the provided page. Falls back to the value of `postLoginRedirectUri` in the `nauth0` configuration, and then falls back to `/`.
 
 ### `/api/auth/logout`
 
