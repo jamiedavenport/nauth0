@@ -5,6 +5,6 @@
 - [ ] Documentation
 - [ ] Tests
 
-### First time contributor?
+### First time contributor?
 
 - [ ] Add your contributions to the README. [Instructions](/CONTRIBUTING.md)
