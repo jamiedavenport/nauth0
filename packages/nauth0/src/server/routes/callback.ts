@@ -1,8 +1,9 @@
 import { NAuth0ApiRoute } from './route';
 import { parseCookies, setCookie } from 'nookies';
 import { sessionCookie, stateCookie } from '../cookies';
-import { createClient } from '../oidc';
+import { createClient, decodeState } from '../oidc';
 import { encodeSession, sessionFromTokenSet } from '../session';
+import { redirectKey } from '../config';
 
 export const callbackRoute: NAuth0ApiRoute = async (req, res, opts) => {
   const cookies = parseCookies({ req });
@@ -28,9 +29,11 @@ export const callbackRoute: NAuth0ApiRoute = async (req, res, opts) => {
     path: '/',
   });
 
+  const redirect = decodeState(state)[redirectKey] as string;
+
   res
     .writeHead(302, {
-      Location: '/', // TODO: Get the redirectUri
+      Location: redirect ?? opts.postLoginRedirectUri ?? '/',
     })
     .end();
 };

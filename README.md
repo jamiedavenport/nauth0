@@ -29,6 +29,7 @@ export default nauth0({
   clientSecret: process.env.AUTH0_CLIENT_SECRET,
   redirectUri: 'http://localhost:3000/api/auth/callback',
   logoutRedirectUri: 'http://localhost:3000/',
+  postLoginRedirectUri: 'http://localhost:3000/profile', // Optional global configuration of post login page.
   scope: 'openid profile',
   session: {
     cookieSecret: 'supersecret',
@@ -87,6 +88,10 @@ Create a new Regular Web Application with the following settings:
 
 ### `/api/auth/login`
 
+Query parameters:
+
+- `redirectTo`: Redirects the user to the provided page. Falls back to the value of `postLoginRedirectUri` in the `nauth0` configuration, and then falls back to `/`.
+
 ### `/api/auth/logout`
 
 ### `/api/auth/callback`
@@ -105,7 +110,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://jamiedavenport.dev"><img src="https://avatars2.githubusercontent.com/u/1329874?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Jamie Davenport</b></sub></a><br /><a href="https://github.com/jamiedavenport/nauth0/commits?author=jamiedavenport" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/markylaing"><img src="https://avatars2.githubusercontent.com/u/41469221?v=4?s=100" width="100px;" alt=""/><br /><sub><b>markylaing</b></sub></a><br /><a href="https://github.com/jamiedavenport/nauth0/commits?author=markylaing" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/markylaing"><img src="https://avatars2.githubusercontent.com/u/41469221?v=4?s=100" width="100px;" alt=""/><br /><sub><b>markylaing</b></sub></a><br /><a href="https://github.com/jamiedavenport/nauth0/commits?author=markylaing" title="Documentation">📖</a> <a href="https://github.com/jamiedavenport/nauth0/commits?author=markylaing" title="Code">💻</a></td>
   </tr>
 </table>
 

@@ -5,6 +5,7 @@ export interface NAuth0Options {
   scope: string;
   redirectUri: string;
   logoutRedirectUri: string;
+  postLoginRedirectUri?: string;
   audience?: string;
 
   session: {
@@ -12,3 +13,5 @@ export interface NAuth0Options {
     cookieLifetime?: number;
   };
 }
+
+export const redirectKey = 'redirectTo';
