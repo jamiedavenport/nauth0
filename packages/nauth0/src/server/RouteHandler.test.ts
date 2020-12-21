@@ -12,7 +12,7 @@ const opts: NAuth0Options = {
   domain: 'example.com',
   clientId: 'clientId',
   clientSecret: 'clientSecret',
-  scope: '',
+  scope: 'openid profile offline_access',
   redirectUri: 'http://localhost:3000/api/auth/callback',
   logoutRedirectUri: 'http://localhost:3000/',
   session: {
