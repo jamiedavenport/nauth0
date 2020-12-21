@@ -22,6 +22,15 @@ const opts: NAuth0Options = {
 
 describe('RouteHandler', () => {
   describe('session', () => {
+    const createSessionCtx = () =>
+      createMocks({
+        method: 'GET',
+        url: '/api/auth/session',
+        query: {
+          auth: 'session',
+        },
+      });
+
     const validSession: Session = {
       user: {
         id: '1',
@@ -51,13 +60,7 @@ describe('RouteHandler', () => {
     });
 
     it.skip('should return the valid session', async () => {
-      const ctx = createMocks({
-        method: 'GET',
-        url: '/api/auth/session',
-        query: {
-          auth: 'session',
-        },
-      });
+      const ctx = createSessionCtx();
       const { req, res } = ctx;
 
       backingSessionStore.save(ctx, validSession);
@@ -68,13 +71,7 @@ describe('RouteHandler', () => {
     });
 
     it('should return the unauthorized when no session exists', async () => {
-      const ctx = createMocks({
-        method: 'GET',
-        url: '/api/auth/session',
-        query: {
-          auth: 'session',
-        },
-      });
+      const ctx = createSessionCtx();
       const { req, res } = ctx;
 
       await handler(req, res);
@@ -82,13 +79,7 @@ describe('RouteHandler', () => {
     });
 
     it('should refresh the session when expired and a `refreshToken` exists', async () => {
-      const ctx = createMocks({
-        method: 'GET',
-        url: '/api/auth/session',
-        query: {
-          auth: 'session',
-        },
-      });
+      const ctx = createSessionCtx();
       const { req, res } = ctx;
 
       const expiredSession = { ...validSession, expiresAt: 0 };
@@ -101,13 +92,7 @@ describe('RouteHandler', () => {
     });
 
     it('should return unauthorized when the session is expired and no `refreshToken` exists', async () => {
-      const ctx = createMocks({
-        method: 'GET',
-        url: '/api/auth/session',
-        query: {
-          auth: 'session',
-        },
-      });
+      const ctx = createSessionCtx();
       const { req, res } = ctx;
 
       const expiredSessionWithoutRefreshToken = {
