@@ -80,6 +80,7 @@ export default class RouteHandler {
       state,
     });
 
+    // TODO: Handle the case when claims are missing from the ID tokens
     const session = sessionFromTokenSet(tokenSet);
     await this.sessionStore.save({ req, res }, session);
 
