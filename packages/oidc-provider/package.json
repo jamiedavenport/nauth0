@@ -1,0 +1,11 @@
+{
+  "name": "oidc-provider",
+  "private": true,
+  "version": "0.1.0",
+  "dependencies": {
+    "oidc-provider": "^6.29.10"
+  },
+  "scripts": {
+    "dev": "node server.js"
+  }
+}
