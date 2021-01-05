@@ -3,7 +3,7 @@ import OidcClientProvider from './OidcClientProvider';
 import RouteHandler from './RouteHandler';
 import MemorySessionStore from './session/MemorySessionStore';
 import RefreshingSessionStore from './session/RefreshingSessionStore';
-import { createMocks } from 'node-mocks-http';
+import { createMocks, Mocks } from 'node-mocks-http';
 import { Session } from '../lib';
 
 jest.useFakeTimers('modern').setSystemTime(1);
@@ -22,7 +22,8 @@ const opts: NAuth0Options = {
 
 describe('RouteHandler', () => {
   describe('session', () => {
-    const createSessionCtx = () =>
+    /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+    const createSessionCtx = (): Mocks<any, any> =>
       createMocks({
         method: 'GET',
         url: '/api/auth/session',
