@@ -40,6 +40,7 @@ yarn test --watch
 If you're using linux, you will need to install some [dependencies](https://docs.cypress.io/guides/getting-started/installing-cypress.html#Linux) so that [cypress](https://www.cypress.io/) will work for tests.
 
 We run a local OIDC provider that allows any username/password combination to login for development purposes.
+
 ### Volta
 
 This project uses Volta which keeps us all using the same tool versions. Read more about Volta [here](https://docs.volta.sh/guide/).
