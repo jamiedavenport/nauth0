@@ -60,5 +60,9 @@
   "lint-staged": {
     "*.{ts,tsx,js}": "yarn run lint",
     "*.{ts,tsx,js,json,md}": "yarn run format --write"
+  },
+  "volta": {
+    "node": "14.15.4",
+    "yarn": "1.22.10"
   }
 }
