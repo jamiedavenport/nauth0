@@ -27,5 +27,13 @@
   "plugins": ["react", "@typescript-eslint"],
   "rules": {
     "react/prop-types": "off"
-  }
+  },
+  "overrides": [
+    {
+      "files": ["*.js"],
+      "rules": {
+        "@typescript-eslint/no-var-requires": "off"
+      }
+    }
+  ]
 }

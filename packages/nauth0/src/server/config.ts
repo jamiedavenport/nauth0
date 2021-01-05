@@ -1,5 +1,5 @@
 export interface NAuth0Options {
-  domain: string;
+  issuer: string;
   clientId: string;
   clientSecret: string;
   scope: string;

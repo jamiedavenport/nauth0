@@ -80,6 +80,7 @@ export default class RouteHandler {
       state,
     });
 
+    // TODO: Handle the case when claims are missing from the ID tokens
     const session = sessionFromTokenSet(tokenSet);
     await this.sessionStore.save({ req, res }, session);
 
@@ -94,8 +95,8 @@ export default class RouteHandler {
     res: NextApiResponse
   ): Promise<void> {
     // TODO: This is very auth0 specific. If we want to make this work with any OIDC provider then it needs to change to use the end_session_url from .well-known
-    const { domain, clientId, logoutRedirectUri } = this.opts;
-    const endSessionUrl = `https://${domain}/v2/logout?client_id=${clientId}&returnTo=${encodeURIComponent(
+    const { issuer, clientId, logoutRedirectUri } = this.opts;
+    const endSessionUrl = `${issuer}/v2/logout?client_id=${clientId}&returnTo=${encodeURIComponent(
       logoutRedirectUri
     )}`;
 

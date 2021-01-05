@@ -39,11 +39,4 @@ yarn test --watch
 
 If you're using linux, you will need to install some [dependencies](https://docs.cypress.io/guides/getting-started/installing-cypress.html#Linux) so that [cypress](https://www.cypress.io/) will work for tests.
 
-### Example Application
-
-An example application will be launched at http://localhost:3000. This is already configured with an Auth0 application and you can use it to test your changes. Use the email/password combination below:
-
-```
-tester@nauth0.dev
-password
-```
+We run a local OIDC provider that allows any username/password combination to login for development purposes.

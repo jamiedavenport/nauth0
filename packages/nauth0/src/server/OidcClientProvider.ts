@@ -9,9 +9,9 @@ export default class OidcClientProvider {
   async getClient(): Promise<Client> {
     if (this.client) return this.client;
 
-    const { domain, clientId, clientSecret, redirectUri } = this.opts;
+    const { issuer: iss, clientId, clientSecret, redirectUri } = this.opts;
 
-    const issuer = await Issuer.discover(`https://${domain}/`);
+    const issuer = await Issuer.discover(iss);
     this.client = new issuer.Client({
       client_id: clientId,
       client_secret: clientSecret,
