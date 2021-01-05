@@ -9,7 +9,7 @@ import { Session } from '../lib';
 jest.useFakeTimers('modern').setSystemTime(1);
 
 const opts: NAuth0Options = {
-  domain: 'example.com',
+  issuer: 'example.com',
   clientId: 'clientId',
   clientSecret: 'clientSecret',
   scope: 'openid profile offline_access',
