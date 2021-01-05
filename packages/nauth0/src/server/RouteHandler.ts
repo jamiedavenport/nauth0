@@ -95,7 +95,7 @@ export default class RouteHandler {
   ): Promise<void> {
     // TODO: This is very auth0 specific. If we want to make this work with any OIDC provider then it needs to change to use the end_session_url from .well-known
     const { domain, clientId, logoutRedirectUri } = this.opts;
-    const endSessionUrl = `https://${domain}/v2/logout?client_id=${clientId}&returnTo=${encodeURIComponent(
+    const endSessionUrl = `${domain}/v2/logout?client_id=${clientId}&returnTo=${encodeURIComponent(
       logoutRedirectUri
     )}`;
 

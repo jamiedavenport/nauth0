@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  mock_user_service:
+    image: quay.io/appvia/mock-oidc-user-server:v0.0.2
+    environment:
+      - PORT=9090
+      - CLIENT_ID=client-id
+      - CLIENT_SECRET=client-secret
+      - CLIENT_REDIRECT_URI=http://localhost:3000/api/auth/callback
+      - CLIENT_LOGOUT_REDIRECT_URI=http://localhost:3000
+    ports:
+      - 9090:9090
